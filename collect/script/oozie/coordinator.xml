@@ -1,0 +1,11 @@
+<coordinator-app name="${oozie_coordinator_name}" frequency="${coord:days(1)}" start="${oozie_start_date}" end="${oozie_end_date}" timezone="Europe/Paris" xmlns="uri:oozie:coordinator:0.4" >
+    <controls>
+        <timeout>${oozie_collect_timeout}</timeout>
+    </controls>
+
+    <action>
+        <workflow>
+            <app-path>${oozie_collect_workflow_path}</app-path>
+        </workflow>
+    </action>
+</coordinator-app>
