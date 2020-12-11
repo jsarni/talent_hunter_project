@@ -1,3 +1,3 @@
-[debug] not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/home/juba/Cours/Automatisation/talent_hunter_project/ingest/project/"), "ingest-build")...
-[debug] Done updating ProjectRef(uri("file:/home/juba/Cours/Automatisation/talent_hunter_project/ingest/project/"), "ingest-build")
+[0m[[0m[0mdebug[0m] [0m[0mnot up to date. inChanged = true, force = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mUpdating ProjectRef(uri("file:/home/merzouk/COURS_ESGI/automatisation_donnes/talent_hunter_project/ingest/project/"), "ingest-build")...[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone updating ProjectRef(uri("file:/home/merzouk/COURS_ESGI/automatisation_donnes/talent_hunter_project/ingest/project/"), "ingest-build")[0m

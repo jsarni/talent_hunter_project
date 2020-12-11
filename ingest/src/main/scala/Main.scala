@@ -1,15 +1,37 @@
+import org.apache.spark
+import org.apache.spark.sql.SparkSession
+import org.elasticsearch.spark._
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+
+
+
+
+
+
 
 
 object Main {
 
+
   def main(args: Array[String]): Unit = {
+    val appName : String =  "INGEST_SPOTIFY"
+
     implicit val sparkSession: SparkSession =
       SparkSession.builder()
-        .appName("INGEST_SPOTIFY")
-        .master("d271ee89-3c06-4d40-b9d6-d3c1d65feb57.priv.instances.scw.cloud")
+        .appName(appName)
+        .enableHiveSupport()
         .getOrCreate()
 
-    NewReleasesIngestor(sparkSession).ingest()
+    val conf = new SparkConf().setAppName(appName).setMaster("yarn")
+    conf.set("es.index.auto.create", "true")
+   // val sc = new SparkContext(conf)
+
+
+
+    val collectDate : String = java.time.LocalDate.now.toString
+    NewReleasesIngestor(sparkSession).ingest(collectDate)
 
     sparkSession.stop()
   }
