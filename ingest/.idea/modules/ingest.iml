@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="Project [file:/home/merzouk/COURS_ESGI/automatisation_donnes/talent_hunter_project/ingest/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="Project [file:/home/juba/Cours/Automatisation/talent_hunter_project/ingest/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../target/scala-2.12/classes" />
     <output-test url="file://$MODULE_DIR$/../../target/scala-2.12/test-classes" />
@@ -10,7 +10,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../target" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="sbt: org.elasticsearch:elasticsearch-hadoop:7.1.0:jar" level="project" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.carrotsearch:hppc:0.7.2:jar" level="project" />
@@ -129,6 +128,7 @@
     <orderEntry type="library" name="sbt: org.codehaus.janino:commons-compiler:3.0.9:jar" level="project" />
     <orderEntry type="library" name="sbt: org.codehaus.janino:janino:3.0.9:jar" level="project" />
     <orderEntry type="library" name="sbt: org.codehaus.jettison:jettison:1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.elasticsearch:elasticsearch-hadoop:7.1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.fusesource.leveldbjni:leveldbjni-all:1.8:jar" level="project" />
     <orderEntry type="library" name="sbt: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b34:jar" level="project" />
     <orderEntry type="library" name="sbt: org.glassfish.hk2.external:javax.inject:2.4.0-b34:jar" level="project" />
