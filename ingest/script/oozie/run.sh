@@ -9,7 +9,7 @@ getProperty(){
 # Get current dir
 DIR = "$(pwd)"
 
-PROPERTIES_FILE = "$DIR/../properties/collect.properties"
+PROPERTIES_FILE = "$DIR/../properties/ingest.properties"
 
 OOZIE_CLIENT = $(getProperty "$PROPERTIES_FILE" "oozie_client")
 OOZIE="http://$OOZIE_OOZIE_CLIENT/oozie"
