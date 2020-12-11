@@ -11,12 +11,12 @@ DIR="$(pwd)"
 
 PROPERTIES_FILE="$DIR/../properties/ingest.properties"
 
-OOZIE_CLIENT=$(getProperty "${PROPERTIES_FILE}" "oozie_client")
-OOZIE="http://${OOZIE_OOZIE_CLIENT}/oozie"
-OOZIE_COORD_NAME=$(getProperty "${PROPERTIES_FILE}" "oozie_coordinator_name")
+OOZIE_CLIENT="d271ee89-3c06-4d40-b9d6-d3c1d65feb57.priv.instances.scw.cloud:11000"
+OOZIE="http://${OOZIE_CLIENT}/oozie"
+OOZIE_COORD_NAME="SPOTIFY_INGEST_COORD_TALENTHUNTER"
 
-START_DATE=$(getProperty "${PROPERTIES_FILE}" "start_date")
-END_DATE=$(getProperty "${PROPERTIES_FILE}" "end_date")
+START_DATE="2020-12-04T06:00+0100"
+END_DATE="2021-03-01T06:00+0100"
 
 ## Kill previous coordinator
 oozie jobs --oozie ${OOZIE} -jobtype coordinator -filter name=${OOZIE_COORD_NAME} -kill
