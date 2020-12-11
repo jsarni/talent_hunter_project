@@ -7,16 +7,16 @@ getProperty(){
 }
 
 # Get current dir
-DIR = "$(pwd)"
+DIR="$(pwd)"
 
-PROPERTIES_FILE = "$DIR/../properties/ingest.properties"
+PROPERTIES_FILE="$DIR/../properties/ingest.properties"
 
-OOZIE_CLIENT = $(getProperty "$PROPERTIES_FILE" "oozie_client")
-OOZIE="http://$OOZIE_OOZIE_CLIENT/oozie"
-OOZIE_COORD_NAME = $(getProperty "$PROPERTIES_FILE" "oozie_coordinator_name")
+OOZIE_CLIENT=$(getProperty "${PROPERTIES_FILE}" "oozie_client")
+OOZIE="http://${OOZIE_OOZIE_CLIENT}/oozie"
+OOZIE_COORD_NAME=$(getProperty "${PROPERTIES_FILE}" "oozie_coordinator_name")
 
-START_DATE = $(getProperty "$PROPERTIES_FILE" "start_date")
-END_DATE = $(getProperty "$PROPERTIES_FILE" "end_date")
+START_DATE=$(getProperty "${PROPERTIES_FILE}" "start_date")
+END_DATE=$(getProperty "${PROPERTIES_FILE}" "end_date")
 
 ## Kill previous coordinator
 oozie jobs --oozie ${OOZIE} -jobtype coordinator -filter name=${OOZIE_COORD_NAME} -kill
