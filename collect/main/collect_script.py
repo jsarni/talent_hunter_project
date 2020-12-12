@@ -166,5 +166,6 @@ def All_playlist():
 if __name__ == '__main__':
     new_releases_spotify()
     All_playlist()
+    GetTopsTodayTracks()
 
 
