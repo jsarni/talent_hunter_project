@@ -1,14 +1,4 @@
-import org.apache.spark
 import org.apache.spark.sql.SparkSession
-import org.elasticsearch.spark._
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-
-
-
-
-
 
 
 
@@ -21,13 +11,13 @@ object Main {
     implicit val sparkSession: SparkSession =
       SparkSession.builder()
         .appName(appName)
+        .config("spark.es.nodes","51.15.248.86")
+        .config("spark.spark.es.port","9200")
+      	.config("spark.es.index.auto.create" , "true")
+      	.config("spark.es.index.read.missing.as.empty" , "true")
+      	.config("spark.es.nodes.wan.only" , "true")
         .enableHiveSupport()
         .getOrCreate()
-
-    val conf = new SparkConf().setAppName(appName).setMaster("yarn")
-    conf.set("es.index.auto.create", "true")
-   // val sc = new SparkContext(conf)
-
 
 
     val collectDate : String = java.time.LocalDate.now.toString
