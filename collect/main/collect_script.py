@@ -8,6 +8,7 @@ EDGE_TARGET_FOLDER = "/home/talenthunter/spotify"
 PLAYLISTS_FILE = "spotify_playlist.csv"
 NEW_RELEASES_CSV = "new_release.csv"
 ARTIST_FILE="artist"
+DAILY_PLAYLIST="top_daily_hits.csv"
 
 #définition des variables utilisateur:
 ID_CLIENT="93af51f0124c475e882dde858a060f5a"
@@ -117,7 +118,7 @@ def GetTopsTodayTracks():
                                                 "track_artist_popularity",
                                                 "track_artist_uri"])
     TodayHits['collect_date'] = todayString()
-    TodayHits.to_csv(f"{EDGE_TARGET_FOLDER}/TopHits_{todayString()}.csv",index=False)
+    TodayHits.to_csv(f"{EDGE_TARGET_FOLDER}/{DAILY_PLAYLIST}",index=False)
 
 
 
@@ -167,5 +168,4 @@ if __name__ == '__main__':
     new_releases_spotify()
     All_playlist()
     GetTopsTodayTracks()
-
 
