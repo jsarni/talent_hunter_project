@@ -15,7 +15,9 @@ lazy val commonSettings = Seq(
     "org.apache.spark" % "spark-core_2.12" % "2.4.4",
     "org.apache.spark" % "spark-sql_2.12" % "2.4.4",
     "org.elasticsearch" % "elasticsearch-hadoop" % "7.1.0",
-    "org.antlr" % "antlr4-runtime" % "4.7.2"
+    "org.antlr" % "antlr4-runtime" % "4.7.2",
+    "org.scala-lang" % "scala-library" % scalaVersion.value,
+    "org.scalatest" %% "scalatest" % "3.0.2" % Test
   )
 
 )
