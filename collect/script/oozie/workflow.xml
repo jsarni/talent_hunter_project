@@ -1,0 +1,14 @@
+<workflow-app name="${oozie_workflow_name}" frequency="${coord:days(1)}" start="${oozie_start_date}" end="${oozie_end_date}" timezone="Europe/Paris" xmlns="uri:oozie:coordinator:0.4" >
+    <start to="run-spotify-collect-app" />
+
+    <action name="collect-spotify-app">
+	    <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${rm}</job-tracker>
+            <name-node>${namenode}</name-node>
+            <exec>${python_script_file_name}</exec>
+            <file>${python_script_file_path}</file>
+        </shell>
+        <ok to="end" />
+        <error to="kill" />
+    </action>
+</workflow-app>

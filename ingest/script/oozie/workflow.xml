@@ -1,0 +1,31 @@
+<workflow-app name="${oozie_workflow_name}" frequency="${coord:days(1)}" start="${oozie_start_date}" end="${oozie_end_date}" timezone="Europe/Paris" xmlns="uri:oozie:coordinator:0.4" >
+    <global>
+        <configuration>
+            <job-tracker>${rm}</job-tracker>
+            <name-node>${namenode}</name-node>
+            <property>
+                <name>yarn.nodemanager.resource.mémoire-mb</name>
+                <value>1024</value>
+            </property>
+            <property>
+                <name>mapreduce.map.memory.mb</name>
+                <value>512</value>
+            </property>
+            <property>
+                <name>mapreduce.reduce.memory.mb</name>
+                <value>512</value>
+            </property>
+        </configuration>
+    </global>
+    <start to="ingest-spotify-app" />
+
+    <action name="ingest-spotify-app">
+	    <spark xmlns="uri:oozie:shell-action:0.1">
+            <master>${spark_master}</master>
+            <name>${spark_app_name}</name>
+            <jar>${jar_path}</jar>
+        </spark>
+        <ok to="end" />
+        <error to="kill" />
+    </action>
+</workflow-app>

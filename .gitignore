@@ -1,2 +1,8 @@
 *.class
 *.log
+idea
+*/target
+/ingest/.idea/
+/ingest/target/
+/ingest/.bsp/
+/.idea/
