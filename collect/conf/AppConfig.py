@@ -1,1 +1,1 @@
-EDGE_TARGET_FOLDER = ""
+EDGE_TARGET_FOLDER = "/home/talenthunter/spotify"
